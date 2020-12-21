@@ -24,7 +24,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Chat App</title>
+
+    <!-- Test infrastructure - DO NOT EDIT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+    <script>
+      (()=>{const e=()=>([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,e=>(e^crypto.getRandomValues(new Uint8Array(1))[0]&15>>e/4).toString(16));let a,t=()=>null,n=()=>null,r=0;const o=[faker.name.firstName(),faker.name.firstName(),faker.name.firstName()],s=e=>t(e),l=(a,t="Me")=>{s({content:a,user:t,id:e(),timestamp:Date.now()})},m=()=>o[Math.round(2*Math.random())],c=()=>{r=0,clearInterval(a),a=setInterval(()=>{r>=3?clearInterval(a):(l(faker.hacker.phrase(),m()),r++)},5e3)},d=()=>{const e=m();n(e);const a=1e3*(Math.floor(10*Math.random())+4);setTimeout(d,a)};d(),document.addEventListener("keydown",()=>{n("Me")}),window.Chat={sendMessage(e){c(),l(e)},onMessage(e){c(),t=e},onTyping(e){n=e}}})();
+    </script>
+    <!-- Test infrastructure - DO NOT EDIT -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

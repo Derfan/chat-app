@@ -1,0 +1,66 @@
+.message {
+    position: relative;
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.message.with-arrow {
+    border-radius: 0 10px 10px 10px;
+}
+
+.message.with-arrow:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 5px solid white;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.message.self {
+    background: lightblue;
+    align-self: flex-end;
+}
+
+.message.self.with-arrow {
+    border-radius: 10px 0 10px 10px;
+}
+
+.message.self.with-arrow:before {
+    display: none;
+}
+
+.message.self.with-arrow:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border: 5px solid lightblue;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.message > h4 {
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.message > p {
+    font-size: 18px;
+}
+
+.message > time {
+    padding-top: 10px;
+    display: block;
+    font-size: 14px;
+    text-align: right;
+    font-style: italic;
+}
